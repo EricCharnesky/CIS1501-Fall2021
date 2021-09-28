@@ -1,3 +1,6 @@
+import math
+import sys
+
 name = input("What's your name?")
 
 first_initial = name[0]
@@ -119,3 +122,38 @@ print(students_scores)
   # list - order matters, you can append, remove, pop
   # set - order doesn't matter, unique values only
   # dictionary - mapping type, key->value pairs
+
+some_numbers = [4,8,16,32,64]
+some_numbers.insert(0, 2)
+some_numbers.insert(0, 1)
+
+print(some_numbers)
+
+major = input("What is your major?")
+year_in_school = input("What year of school are you in? ( Freshman, sophomore, junior, senior )")
+
+print(name, "is a", major, "major in their", year_in_school, "year")
+
+print('{} is a {} major in their {} year'.format(name, major, year_in_school))
+
+print(f'{name} is a {major} major in their {year_in_school} year')
+
+hour = int(input("what hour is it?"))
+minute = int(input("what minute is it?"))
+
+print('{}:{:02d}'.format(hour, minute))
+print(f'{hour}:{minute:02d}')
+
+print('{}'.format(3/7))
+print('{:.2f}'.format(3/7))
+print(f'{3/7:.2f}')
+
+number_to_square_root = int(input("What number do you want the square root of?"))
+
+print(math.sqrt(number_to_square_root))
+
+print(sys.maxsize + 1)
+
+
+
+
