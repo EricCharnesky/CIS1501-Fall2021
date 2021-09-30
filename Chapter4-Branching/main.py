@@ -135,6 +135,18 @@ else:
     print("You are in quad 4")
 
 
+if x >= 0:
+    if y >= 0:
+        print("You are in quad 1")
+    else:
+        print("You are in quad 4")
+else:
+    if y >= 0:
+        print("You are in quad 2")
+    else:
+        print("You are in quad 3")
+
+
 name = input("Enter your name: ")
 
 # python is case sensitive when comparing strings
@@ -150,6 +162,18 @@ my_numbers.append(int(input("Enter a number")))
 
 winning_numbers = [3, 2, 1]
 
+
+match_count = 0
+
+if my_numbers[0] in winning_numbers:
+    match_count += 1
+if my_numbers[1] in winning_numbers:
+    match_count += 1
+if my_numbers[2] in winning_numbers:
+    match_count += 1
+
+print("You matched ( regardless of order ): ", match_count)
+
 if my_numbers == winning_numbers:
     print("You win the daily 3 lotto!")
 else:
@@ -164,5 +188,35 @@ if item_to_buy in menu:
 else:
     print("We don't sell that!")
 
-# ended in the middle of 4.9
 
+first_number = 500
+second_number = 500 + 500
+fourth_number = first_number + first_number
+third_number = first_number
+
+third_number += 10
+
+# checks identity of the object
+if second_number is fourth_number:
+    print("first and second are the same object")
+else:
+    print("first and second number are not the same object")
+
+if first_number is third_number:
+    print("first and third are the same object")
+else:
+    print("first and third number are not the same object")
+
+# always use ( ) if you have a string of ands and ors and you want one to go first
+if ( 10 * 10 < 20 or 20 / 2 > 5 ) and 10 > 20 :
+    print("be careful with order of operations")
+
+age = int(input("What is your age?"))
+
+if age >= 25:
+    cost_of_insurance = 1000
+else:
+    cost_of_insurance = 1500
+
+# conditional operator
+cost_of_insurance = 1000 if age >= 25 else 1500
