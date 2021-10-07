@@ -1,5 +1,105 @@
 from random import randint
 
+
+# 5.5
+names = ['Eric', 'Jasmine', 'Joy', 'Jeb', 'Vivi', 'Journey', 'Jubilee', 'Jack', 'John']
+
+# name is my variable name for the individual name in the names list as we iterate
+# can't actually modify immuatable values inside a list
+for name in names:
+    name = name.upper()
+    print(name)
+
+index = 0
+while index < len(names):
+    name = names[index]
+    name = name.upper()
+    print(name)
+    index += 1
+
+index = 0
+while index < len(names):
+    # this actually changes the list
+    names[index] = names[index].upper()
+    print(names[index])
+    index += 1
+
+print(names)
+
+alphabet = 'ABCEDEFGHIJKLMNOPQRSTUVWXYZ'
+for letter in alphabet:
+    print(letter)
+
+index = 0
+while index < len(alphabet):
+    print(alphabet[index])
+    index += 1
+
+
+
+
+classes = {
+    'CIS1501': 'CS 1 for Data Scientists'
+    , 'CIS2001': 'CS 2 for Data Scientists'
+    , 'CIS3500': 'Data Science 1'
+    , 'CIS421': 'Massive Data Management'
+    }
+
+# using a for loop with a dictionary gives you KEYS
+for my_class in classes:
+    print(my_class, classes[my_class])
+
+
+number = 0
+while number < 10:
+
+    if number % 2 == 1:
+        number += 1
+        continue # stops the current loop and jumps to the header to see if it's true
+    print(number)
+    number += 1
+
+    # generates essentially a tuple of values 0-9 - not including the value you enter
+for number in range(10):
+    print(number)
+
+# range( optional start value, end value, optional step )
+
+for number in range(10, 20):
+    print(number)
+
+for number in range(10, 20, 2):
+    print(number)
+
+# not smart enough to figure out a negative step automatically
+for number in range(10, 0, -1):
+    print(number)
+
+# this is useful for changing what's in the list
+for index in range(len(names)):
+    names[index] = names[index].title()
+
+print(names)
+
+# for loops can always be replaced by while loops, but not vice versa
+
+for hour in range(24):
+    for minute in range(60):
+        for second in range(60):
+            print(f'{hour:02d}:{minute:02d}:{second:02d}')
+
+
+number = 0
+while number < 10:
+    print(number)
+    number += 1
+else: # only runs if you don't break the loop
+    print('loop is done')
+
+# gives both index and value at the same time
+for (index, value) in enumerate(names):
+    print(f'index {index} : {value}')
+
 practice_count = 1
 
 total_problems = int(input("How many math problems do you want?"))
