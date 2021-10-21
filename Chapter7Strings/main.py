@@ -1,5 +1,23 @@
 # left off at 7.4
 
+values = input("Enter your numbers separated by a space")
+
+values_list = [ int(value) for value in values.split() ]# defaults to splitting on spaces
+# list comprehension shortcut
+
+numbers_list = []
+for value in values.split():
+    numbers_list.append(int(value))
+
+print(values_list)
+print(numbers_list)
+
+
+pretty_single_string = ", ".join(str(value) for value in values_list) # take every value and put a ", " in between them
+
+print(pretty_single_string)
+
+
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 e = alphabet[4]
