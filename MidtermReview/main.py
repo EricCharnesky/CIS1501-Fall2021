@@ -1,4 +1,5 @@
 import math
+import random
 
 
 def is_prime(n):
@@ -13,6 +14,41 @@ def is_prime(n):
         if n % divisor == 0:
             return False
     return True
+
+
+def prime_factorial_plus_odds_minus_evens(number):
+    result = 1
+    for value in range(number+1):
+        if is_prime(value):
+            result *= value
+        elif value % 2 == 1:
+            result += value
+        else:
+            result -= value
+    return result
+
+
+def bad_hash(some_string):
+    hash = 0
+    for character in some_string:
+        hash += ord(character)
+
+    return hash
+
+
+def verify_bad_hash( some_string, some_bad_hash ):
+    return some_bad_hash == bad_hash(some_string)
+
+
+def count_of_vowels_sometimes_y(some_string):
+    vowel_count = 0
+    vowels = 'aeiou'
+    for character in some_string:
+        if character.lower() in vowels:
+            vowel_count += 1
+        elif character.lower() == "y" and random.randint(1, 10) % 2 == 1:
+            vowel_count += 1
+    return vowel_count
 
 
 def difference_of_primes_and_non_primes_through_n( number ):
@@ -52,5 +88,8 @@ print(reverse_bad_encryption(value))
 
 
 print(difference_of_primes_and_non_primes_through_n(9))
+
+
+print(count_of_vowels_sometimes_y("yyyyyyyyyyyy"))
 
 
