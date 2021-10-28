@@ -1,3 +1,66 @@
+
+my_dictionary = { 'somekey' : "someValue", "nextkey": "someValue" }
+
+# set or get
+my_dictionary['somekey']
+
+print(my_dictionary)
+
+my_other_dictionary = dict(somekey='somevalue', nextkey='somevalue')
+print(my_other_dictionary)
+
+my_ugly_dictionary = dict([('somekey', 'somevalue'), ('nextkey', 'nextvalue')])
+
+print(my_ugly_dictionary)
+my_ugly_dictionary.pop('nextkey')
+print(my_ugly_dictionary)
+del my_ugly_dictionary['somekey']
+
+print(my_ugly_dictionary)
+
+
+for key in my_dictionary:
+    print(key, ":", my_dictionary[key])
+
+    #only checks keys, not value
+if 'somekey' in my_dictionary:
+    print('found somekey in my dictionary')
+
+print(my_dictionary['somekey'])
+print(my_dictionary.get('anotherkey')) # get avoids crashing, you get None back  or an optional default
+
+for associated_value in my_dictionary.values():
+    print(associated_value)
+
+for key, value in my_dictionary.items():
+    print(key, ":", value)
+
+
+for key in sorted(my_dictionary.keys()):
+    print(key, ":", my_dictionary[key])
+
+gradebook = {}
+
+gradebook['Eric'] = {}
+
+gradebook['Eric']['Quiz 1'] = 10
+gradebook['Eric']['Quiz 2'] = 10
+gradebook['Eric']['Quiz 3'] = 10
+gradebook['Eric']['Project 1'] = 10
+
+gradebook['Jasmine'] = {}
+
+gradebook['Jasmine']['Quiz 1'] = 10
+gradebook['Jasmine']['Quiz 2'] = 10
+gradebook['Jasmine']['Quiz 3'] = 10
+gradebook['Jasmine']['Project 1'] = 10
+
+print(gradebook)
+
+for grade_item in gradebook['Eric']:
+    print(grade_item, ":", gradebook['Eric'][grade_item])
+
+
 numbers = [1, 2, 3, 4, 5]
 for number in numbers: # read only
     number+=10
